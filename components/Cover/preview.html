@@ -1,0 +1,52 @@
+<!-- @dsCard height=320 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600&family=IBM+Plex+Sans:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  svg { display: block; width: 100%; height: 320px; }
+  .name { font-family: var(--font-display, "Sora", sans-serif); font-weight: 600; }
+  .tagline { font-family: var(--font-body, "IBM Plex Sans", sans-serif); font-weight: 400; }
+</style>
+</head>
+<body>
+<!--
+  blocks: teal-conexus slab 300x220 bleeding top+right (var(--teal-conexus));
+          teal-claro regua-bar 400x8 bleeding right, echoing the real regua de abertura 52x3px (var(--teal-claro));
+          branco satellite 160x72 bleeding right+bottom, for relief (var(--branco))
+  arrangement: one tall slab top-right + a wide regua-bar beneath it + a small satellite block,
+               the same slab-plus-regua composition the manual itself uses (Bloco navy de declaracao, Regua de abertura)
+  pattern: literal motif -> two open concentric arcs in teal-claro, echoing the orbit in the Conexus
+           symbol (the name itself means "connection"); a hairline stroke-width, never a filled shape
+  scales: radius-none (0px) on every block per the brand's own zero-radius rule; gaps sized from space-3/space-4
+-->
+<svg viewBox="0 0 960 320" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .ground { fill: var(--navy, #132844); }
+    .block-a { fill: var(--teal-conexus, #00A5B7); }
+    .block-b { fill: var(--teal-claro, #4FD1DE); }
+    .block-c { fill: var(--branco, #ffffff); }
+    .arc { fill: none; stroke: var(--teal-claro, #4FD1DE); stroke-width: 4; }
+    .name { fill: var(--branco, #ffffff); }
+    .tagline { fill: var(--texto-sobre-navy, #A8C2D8); }
+  </style>
+
+  <rect class="ground" x="0" y="0" width="960" height="320"/>
+
+  <path class="arc" d="M 700 210 A 150 150 0 0 1 940 130" />
+  <path class="arc" d="M 690 250 A 190 190 0 0 0 950 90" opacity="0.55" />
+
+  <rect class="block-a" x="660" y="0" width="300" height="220"/>
+  <rect class="block-b" x="560" y="224" width="400" height="8"/>
+  <rect class="block-c" x="800" y="250" width="160" height="72"/>
+
+  <text class="name" x="56" y="216" font-size="88" letter-spacing="-1.5">Conexus</text>
+  <text class="tagline" x="58" y="252" font-size="14" letter-spacing="0.2">Explicar, não vender.</text>
+</svg>
+</body>
+</html>
